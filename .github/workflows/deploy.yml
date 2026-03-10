@@ -1,0 +1,24 @@
+name: CI/CD RAG Bot
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t yourname/rag-api ./backend
+
+      - name: Push image
+        run: |
+          docker push yourname/rag-api
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/

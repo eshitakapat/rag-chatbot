@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-dotenv
+pymupdf
+langchain
+chromadb
+openai
+tiktoken
+langchain-text-splitters
+python-multipart
+chromadb
+sentence-transformers
+google-genai
+groq
